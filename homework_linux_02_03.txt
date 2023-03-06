@@ -1,0 +1,33 @@
+1 уровень сложности: 1 Создайте скрипт sleeper.sh, который будет 10 раз с интервалом в 5 секунд писать дату в формате HH:MM:SS и количество процессов одним числом.
+2 Уменьшите или уберите временной интервал (который нам дает sleep), используя vi или nano, закомментировав строку или поменяв значение sleep
+
+   0 echo -e '#!/bin/bash\n for run in {1..10}\n do\n echo $run\n date +'%T'\n ps -ef | wc -l\n sleep 5\n done' > sleeper.sh
+   1 chmod 744 sleeper.sh
+   2 ./sleeper.sh
+   3 nano sleeper.sh  - закоментировала:  # sleep 5   
+   4 ./sleeper.sh
+   5 history > history-1-2.txt
+
+3 С помощью скрипта запишите в файл информацию об операционной системе, но отфильтруйте информацию так, чтобы осталось только имя (NAME=Alpine Linux).
+
+localhost:~# echo -e '#!/bin/bash\n cat /etc/os-release | head -1' > name_system.sh 
+
+   1 echo -e '#!/bin/bash\n cat /etc/os-release | head -1' > name_system.sh
+   2 chmod 744 name_system.sh
+   3 touch test.txt
+   4 ./name_system.sh >> realpath -e test.txt
+   5 cat realpath -e test.txt
+
+
+4 Выполните прошлое действие, но так, чтобы слово NAME= не осталось, а было только имя в чистом виде (Alpine)
+ 
+не получилось
+
+
+5 С помощью скрипта создайте 50 файлов с расширением txt и именами от 50.txt до 100.txt
+
+   0 echo -e '#!/bin/bash\n for run in {50..100}\n do\n touch $run.txt\n done' > made_file.sh
+   1 chmod 744 made_file.sh
+   2 ./made_file.sh
+   3 ls -l /root
+   4 history > history-3.txt
